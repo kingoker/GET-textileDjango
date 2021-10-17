@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		News Detail
+	</title>
+</head>
+<body>
+
+	<h1>This is detail of {{ news.title }}</h1>
+	<img src="{{ news.image.url }}">
+	<p>{{ news.text }}</p>
+	<p>{{ news.date|date:'F d' }}</p>
+
+
+</body>
+</html>
