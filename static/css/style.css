@@ -302,7 +302,7 @@ textarea {
     box-shadow: 0px 4.23473px 8.46946px #818181;
     border-radius: 10.5868px;
 }
-.news__name{
+.news__name a{
     font-weight: 500;
     font-size: 28px;
     line-height: 32px;
@@ -406,8 +406,11 @@ textarea {
     border-radius: 10px;
 }
 .ourTeam__image img{
-    margin: 20px;
+    object-fit: cover;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 .ourTeam__title{
     margin-top: 50px;

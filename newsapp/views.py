@@ -5,6 +5,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 
+
 class HomeView(generic.View):
 	def get(self, request, *args, **kwargs):
 		news = New.objects.filter(is_publish=True).all()[:3]
@@ -28,23 +29,26 @@ class HomeView(generic.View):
 			send_mail(
 				subject,
 				message,
-				"asindarov07@gmail.com",
-				["asindarov07@gmail.com"],
+				"zolotojznak@gmail.com",
+				["zolotojznak@gmail.com"],
 				fail_silently=False
 			)
 			form.save()
 			return redirect(reverse_lazy('news:list'))
 		
-		return render(request, "index.html", {"services" : services, "form" : form, "news" : news, "partners" : partners, "team" : team})
+		return render(request, "index.html", {"services": services, "form": form, "news": news, "partners": partners, "team": team})
 	
 
 class AllNewsView(generic.View):
+
 	def get(self, request, *args, **kwargs):
 		news = New.objects.filter(is_publish=True).all()
 		return render(request, "all-news.html", {"news" : news})
 
+
 class NewsDetailView(generic.DetailView):
 	template_name = "news_detail.html"
+
 	def get(self, request, pk, *args, **kwargs):
 		news = 	get_object_or_404(New, pk=pk)
 		return render(request, self.template_name, {"news" : news})

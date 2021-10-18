@@ -24,13 +24,13 @@
                 <a href="">
                     <p class="menu__link">Home</p>
                 </a>
-                <a href="">
+                <a href="#about">
                     <p class="menu__link">About</p>
                 </a>
-                <a href="">
+                <a href="#news">
                     <p class="menu__link">News</p>
                 </a>
-                <a href="">
+                <a href="#partners">
                     <p class="menu__link">Partners</p>
                 </a>
                 <a href="#contacts">
@@ -54,7 +54,7 @@
     <section class="fullscreen">
         <div class="fullscreen__container container">
             <div class="fullscreen__text">
-                <h1 class="fullscreen__h1">Global <br> Exim Tex</h1>
+                <h1 class="fullscreen__h1">GET <br>Textile Services</h1>
                 <p class="fullscreen__description">
                     The company provides consulting services for standardization and certification in the field textile and sewing-knitted industry.
                 </p>
@@ -71,12 +71,13 @@
     </section>
 
     <section class="about">
+        <a name="about"></a>
         <div class="about__container container">
             <h2  class="about__title title">About Us</h2>
             <div class="about__description">
                 <div class="about__image">
                     <img src="{% static 'image/logo-red.png' %}" alt="">
-                    <p class="about__icon-text">Global Exim Tex</p>
+                    <p class="about__icon-text">GET Textile Services</p>
                 </div>
                 <div class="about__text">
                     If you choose PraeLegal Uzbekistan – you choose reliable partner and experienced professionals in the different areas of law. We are one of the fewest Uzbek international law firms that has profound experience in the international litigation and arbitration.
@@ -89,8 +90,7 @@
                 <h3 class="services__title">Our services</h3>
                 <div class="servises__list">
                     {% for service in services %}
-
-        <div class="services__item">
+                    <div class="services__item">
                         <div class="services__name">
                             <img src="{{ service.icon.url }}" alt="">
                             <p class="services__name-text">{{ service.title }}</p>
@@ -146,13 +146,14 @@
     </section>
 
     <section class="news">
+        <a name="news"></a>
         <div class="news__container container">
             <h2 class="news__title title">News</h2>
             <div class="news__list">
                 {% for new in news %}
                 <div class="news__item">
                     <div class="news__name">
-                        <p><a href="{% url 'news:news-detail' new.pk %}">{{new.title}}</a></p>
+                        <a href="{% url 'news:news-detail' new.pk %}">{{new.title}}</a>
                     </div>
                     <div class="news__image">
                         <img src="{{ new.image.url }}" alt="image">
@@ -175,6 +176,7 @@
     </section>
 
     <section class="partners">
+        <a name="partners"></a>
         <div class="partners__container container">
             <div class="ourPartners">
                 <h2 class="ourPartners__title title">Our partners</h2>
@@ -196,11 +198,12 @@
             </div>
         </div>
 
-            <div class="ourTeam">
+        <div class="ourTeam">
+            <div class="ourTeam__container container">
                 <h2 class="ourTeam__title title">Our Team</h2>
                 <div class="ourTeam__list">
                     {% for person in team %}
-                <div class="ourTeam__item">
+                    <div class="ourTeam__item">
                         <div class="ourTeam__image">
                             <img src="{{ person.image.url }}" alt="logo">
                         </div>
@@ -230,12 +233,10 @@
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
-                    
-                    
+                {% endfor %}
+                </div>
             </div>
         </div>
-
     </section>
 
     <section class="contacts">
@@ -263,20 +264,6 @@
         <div class="footer__container container">
             <div class="footer__menu">
                 <div class="footer__menu-list">
-                    <div class="footer__menu-item">
-                        <h3 class="footer__title">Follow us</h3>
-                        <a class="footer__link" href="/">Instagram</a>
-                        <a class="footer__link" href="/">Telegram</a>
-                        <a class="footer__link" href="/">Facebook</a>
-                        <a class="footer__link" href="/">linkedin</a>
-                    </div>
-                    <div class="footer__menu-item">
-                        <h3 class="footer__title">Follow us</h3>
-                        <a class="footer__link" href="/">Instagram</a>
-                        <a class="footer__link" href="/">Telegram</a>
-                        <a class="footer__link" href="/">Facebook</a>
-                        <a class="footer__link" href="/">linkedin</a>
-                    </div>
                     <div class="footer__menu-item">
                         <h3 class="footer__title">Follow us</h3>
                         <a class="footer__link" href="/">Instagram</a>
@@ -349,6 +336,6 @@
     </svg>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

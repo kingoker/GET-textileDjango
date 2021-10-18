@@ -16,6 +16,6 @@ class ContactForm(forms.ModelForm):
 		for field in self.fields.values():
 			field.label = ""
 		self.fields["name"].widget.attrs.update({"class" : "contacts__form-name input", "placeholder" : "Name"})	
-		self.fields["phone"].widget.attrs.update({"class" : "contacts__form-phone input", "placeholder" : "Phone: e.g: +998991234567"})
+		self.fields["phone"].widget.attrs.update({"class" : "contacts__form-phone input", "placeholder" : "Phone:"})
 		self.fields["email"].widget.attrs.update({"class" : "contacts__form-email input", "placeholder" : "Email"})
 		self.fields["comment"].widget.attrs.update({"class" : "contacts__form-text input", "placeholder" : "Comment", "cols" : "30", "rows" : "10"})
